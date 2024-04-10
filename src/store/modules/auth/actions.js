@@ -10,9 +10,8 @@ export default {
 	},
 	async auth(context, payload) {
 		const mode = payload.mode;
-		// const API_KEY = config.apiKey;
 		const API_KEY = import.meta.env.VITE_API_KEY;
-		console.log('API_KEY z .env.local pri prihlasovani', API_KEY);
+
 		let url = '';
 		let body = '';
 		if (mode === 'login') {

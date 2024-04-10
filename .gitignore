@@ -12,7 +12,7 @@ node_modules
 dist
 dist-ssr
 coverage
-#*.local
+*.local
 
 /cypress/videos/
 /cypress/screenshots/
@@ -30,4 +30,4 @@ coverage
 *.tsbuildinfo
 
 # moje
-# my-app-config.js
+my-app-config.js

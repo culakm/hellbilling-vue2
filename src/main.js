@@ -1,6 +1,5 @@
 import { createApp, defineAsyncComponent } from 'vue';
 import App from './App.vue';
-import config from './my-app-config.js';
 import router from './router';
 import store from './store/index.js';
 import BaseCard from './components/ui/BaseCard.vue';
@@ -10,9 +9,6 @@ import BaseSpinner from './components/ui/BaseSpinner.vue';
 const BaseDialog = defineAsyncComponent(() => import('./components/ui/BaseDialog.vue'));
 
 const app = createApp(App);
-
-// API_KEY je z my-app-config.js
-app.config.globalProperties.API_KEY = config.apiKey;
 
 app.use(router);
 app.use(store);
