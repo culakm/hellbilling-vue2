@@ -1,4 +1,5 @@
 let timer;
+//import config from '../../../app_config.js';
 
 export default {
 	async login(context, payload) {
@@ -9,8 +10,9 @@ export default {
 	},
 	async auth(context, payload) {
 		const mode = payload.mode;
-		const API_KEY = 'AIzaSyCKTrbb3z_8LNLp41YsdxJpQVbgKBpUfhw';
-
+		// const API_KEY = config.apiKey;
+		const API_KEY = import.meta.env.VITE_API_KEY;
+		console.log('API_KEY z .env.local pri prihlasovani', API_KEY);
 		let url = '';
 		let body = '';
 		if (mode === 'login') {
@@ -49,7 +51,6 @@ export default {
 				const error = new Error(`State: coaches, Padlo POST: ${responseData2.error} STATUS: ${response2.status} (${response2.statusText})` || 'Failed to fetch!');
 				throw error;
 			}
-			console.log('responseData2', responseData2);
 
 			const expiresIn = +responseData.expiresIn * 1000;
 			const expirationDate = new Date().getTime() + expiresIn;
